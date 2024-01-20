@@ -48,6 +48,5 @@ $this->title = 'My Yii Application';
                 <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>
-
     </div>
 </div>
