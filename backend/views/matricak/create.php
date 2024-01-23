@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var common\models\query\Autok $model */
+/** @var common\models\query\Matricak $model */
 
-$this->title = 'Create Autok';
-$this->params['breadcrumbs'][] = ['label' => 'Autoks', 'url' => ['index']];
+$this->title = 'Create Matricak';
+$this->params['breadcrumbs'][] = ['label' => 'Matricaks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="autok-create">
+<div class="matricak-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

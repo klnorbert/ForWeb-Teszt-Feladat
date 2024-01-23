@@ -7,12 +7,14 @@ use Yii;
 /**
  * This is the model class for table "{{%autok}}".
  *
- * @property string $auto_id
+ * @property int $auto_id
  * @property string $gyarto
  * @property string $tipus
  * @property string $rendszam
  * @property int $gyartasi_ev
  * @property string $created_at
+ *
+ * @property Matricak $matricak
  */
 class Autok extends \yii\db\ActiveRecord
 {
@@ -30,12 +32,12 @@ class Autok extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['auto_id', 'gyarto', 'tipus', 'rendszam', 'gyartasi_ev'], 'required'],
+            [['gyarto', 'tipus', 'rendszam', 'gyartasi_ev'], 'required'],
             [['gyartasi_ev'], 'integer'],
             [['created_at'], 'safe'],
-            [['auto_id', 'rendszam'], 'string', 'max' => 32],
             [['gyarto', 'tipus'], 'string', 'max' => 128],
-            [['auto_id'], 'unique'],
+            [['rendszam'], 'string', 'max' => 32],
+            [['rendszam'], 'unique'],
         ];
     }
 
@@ -52,6 +54,16 @@ class Autok extends \yii\db\ActiveRecord
             'gyartasi_ev' => 'Gyartasi Ev',
             'created_at' => 'Created At',
         ];
+    }
+
+    /**
+     * Gets query for [[Matricak]].
+     *
+     * @return \yii\db\ActiveQuery|MatricakQuery
+     */
+    public function getMatricak()
+    {
+        return $this->hasOne(Matricak::class, ['auto_id' => 'auto_id']);
     }
 
     /**

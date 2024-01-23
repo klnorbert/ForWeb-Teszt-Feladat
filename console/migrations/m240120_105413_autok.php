@@ -15,15 +15,13 @@ class m240120_105413_autok extends Migration
         }
 
         $this->createTable('{{%autok}}', [
-            'auto_id' => $this->string(32)->notNull()->unique(),
+            'auto_id' => $this->primaryKey()->unsigned()->unique(),
             'gyarto' => $this->string(128)->notNull(),
             'tipus' => $this->string(128)->notNull(),
-            'rendszam' => $this->string(32)->notNull(),
+            'rendszam' => $this->string(32)->notNull()->unique(),
             'gyartasi_ev' => $this->integer(16)->notNull(),
-            'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
+            'created_at' => $this->timestamp()->notNull(),
         ], $tableOptions);
-
-        $this->addPrimaryKey('PK_auto_id', '{{%autok}}', 'auto_id');
     }
 
     public function down()

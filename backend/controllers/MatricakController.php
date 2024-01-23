@@ -2,16 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\query\Autok;
+use common\models\query\Matricak;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * AutokController implements the CRUD actions for Autok model.
+ * MatricakController implements the CRUD actions for Matricak model.
  */
-class AutokController extends Controller
+class MatricakController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,21 +32,21 @@ class AutokController extends Controller
     }
 
     /**
-     * Lists all Autok models.
+     * Lists all Matricak models.
      *
      * @return string
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Autok::find(),
+            'query' => Matricak::find(),
             /*
             'pagination' => [
                 'pageSize' => 50
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'auto_id' => SORT_DESC,
+                    'matrica_id' => SORT_DESC,
                 ]
             ],
             */
@@ -58,30 +58,30 @@ class AutokController extends Controller
     }
 
     /**
-     * Displays a single Autok model.
-     * @param int $auto_id Auto ID
+     * Displays a single Matricak model.
+     * @param int $matrica_id Matrica ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($auto_id)
+    public function actionView($matrica_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($auto_id),
+            'model' => $this->findModel($matrica_id),
         ]);
     }
 
     /**
-     * Creates a new Autok model.
+     * Creates a new Matricak model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Autok();
+        $model = new Matricak();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'auto_id' => $model->auto_id]);
+                return $this->redirect(['view', 'matrica_id' => $model->matrica_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -93,18 +93,18 @@ class AutokController extends Controller
     }
 
     /**
-     * Updates an existing Autok model.
+     * Updates an existing Matricak model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $auto_id Auto ID
+     * @param int $matrica_id Matrica ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($auto_id)
+    public function actionUpdate($matrica_id)
     {
-        $model = $this->findModel($auto_id);
+        $model = $this->findModel($matrica_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'auto_id' => $model->auto_id]);
+            return $this->redirect(['view', 'matrica_id' => $model->matrica_id]);
         }
 
         return $this->render('update', [
@@ -113,29 +113,29 @@ class AutokController extends Controller
     }
 
     /**
-     * Deletes an existing Autok model.
+     * Deletes an existing Matricak model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $auto_id Auto ID
+     * @param int $matrica_id Matrica ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($auto_id)
+    public function actionDelete($matrica_id)
     {
-        $this->findModel($auto_id)->delete();
+        $this->findModel($matrica_id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Autok model based on its primary key value.
+     * Finds the Matricak model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $auto_id Auto ID
-     * @return Autok the loaded model
+     * @param int $matrica_id Matrica ID
+     * @return Matricak the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($auto_id)
+    protected function findModel($matrica_id)
     {
-        if (($model = Autok::findOne(['auto_id' => $auto_id])) !== null) {
+        if (($model = Matricak::findOne(['matrica_id' => $matrica_id])) !== null) {
             return $model;
         }
 
