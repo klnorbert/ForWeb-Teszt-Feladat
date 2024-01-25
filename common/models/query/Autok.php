@@ -18,6 +18,7 @@ use Yii;
  */
 class Autok extends \yii\db\ActiveRecord
 {
+    public $gyartasi_ev = 2020;
     /**
      * {@inheritdoc}
      */
@@ -33,7 +34,7 @@ class Autok extends \yii\db\ActiveRecord
     {
         return [
             [['gyarto', 'tipus', 'rendszam', 'gyartasi_ev'], 'required'],
-            [['gyartasi_ev'], 'integer'],
+            [['gyartasi_ev'], 'integer','min' => 1900, 'max' => date('Y')],
             [['created_at'], 'safe'],
             [['gyarto', 'tipus'], 'string', 'max' => 128],
             [['rendszam'], 'string', 'max' => 32],
@@ -48,10 +49,10 @@ class Autok extends \yii\db\ActiveRecord
     {
         return [
             'auto_id' => 'Auto ID',
-            'gyarto' => 'Gyarto',
-            'tipus' => 'Tipus',
-            'rendszam' => 'Rendszam',
-            'gyartasi_ev' => 'Gyartasi Ev',
+            'gyarto' => 'Gyartó',
+            'tipus' => 'Kocsi Tipus',
+            'rendszam' => 'Rendszám',
+            'gyartasi_ev' => 'Gyártási Év',
             'created_at' => 'Created At',
         ];
     }

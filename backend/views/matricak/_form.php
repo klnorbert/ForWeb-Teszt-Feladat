@@ -1,12 +1,10 @@
 <?php
 
-use common\models\MatricaModel;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap5\ActiveForm;
 
-/** @var common\models\Matricak $model */
 /** @var yii\web\View $this */
-/** @var yii\widgets\ActiveForm $form */
+/** @var yii\bootstrap5\ActiveForm $form */
 ?>
 
 <div class="matricak-form">
@@ -15,31 +13,31 @@ use yii\widgets\ActiveForm;
 
     <?php
     $autok = (new \yii\db\Query())
-        ->select(['auto_id', 'gyarto', 'tipus', 'rendszam'])
+        ->select(['auto_id', 'gyarto', 'rendszam'])
         ->from('autok')
         ->all();
 
-    // Cseréld le az auto_id-t a rendszámra és tipusra
     $autokMapped = \yii\helpers\ArrayHelper::map($autok, 'auto_id', function ($autok) {
-        return $autok['rendszam'] . ' - ' . $autok['tipus'];
+        return $autok['rendszam'] . ' - ' . $autok['gyarto'];
     });
 
-    // Dropdown lista létrehozása
     echo $form->field($model, 'auto_id')->dropDownList(
         $autokMapped,
         ['prompt' => 'Válassz autót...']
     );
     ?>
 
-    <?= $form->field($model, 'lejarat_idopont')->textInput() ?>
+    <?= $form->field($model, 'lejarat_idopont')->input('datetime-local', ['value' => date('Y-m-d\TH:i:s')]) ?>
+
 
     <?= $form->field($model, 'matrica_tipus')->dropDownList(
-        MatricaModel::tipusok(),
+        ['10 napos' => '10 napos', '1 hónapos' => '1 hónapos', '1 éves' => '1 éves'],
         ['prompt' => 'Válasszon matrica típust']
     ) ?>
 
+
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Mentés', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\query\Autok $model */
 
-$this->title = 'Update Autok: ' . $model->auto_id;
-$this->params['breadcrumbs'][] = ['label' => 'Autoks', 'url' => ['index']];
+$this->title = 'Autó Feltöltés: ' . $model->auto_id;
+$this->params['breadcrumbs'][] = ['label' => 'Autók', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->auto_id, 'url' => ['view', 'auto_id' => $model->auto_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Frissítés';
 ?>
 <div class="autok-update">
 

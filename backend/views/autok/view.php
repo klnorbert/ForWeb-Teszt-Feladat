@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /** @var common\models\query\Autok $model */
 
 $this->title = $model->auto_id;
-$this->params['breadcrumbs'][] = ['label' => 'Autoks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Autók', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'auto_id' => $model->auto_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'auto_id' => $model->auto_id], [
+        <?= Html::a('Frissités', ['update', 'auto_id' => $model->auto_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Törlés', ['delete', 'auto_id' => $model->auto_id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Bisztos hogy tötölni akkarod?',
                 'method' => 'post',
             ],
         ]) ?>

@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\query\Autok $model */
 
-$this->title = 'Create Autok';
-$this->params['breadcrumbs'][] = ['label' => 'Autoks', 'url' => ['index']];
+$this->title = 'Autó Feltöltés';
+$this->params['breadcrumbs'][] = ['label' => 'Autók', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="autok-create">

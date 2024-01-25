@@ -34,7 +34,6 @@ class Matricak extends \yii\db\ActiveRecord
             [['auto_id'], 'integer'],
             [['lejarat_idopont'], 'safe'],
             [['matrica_tipus'], 'string', 'max' => 16],
-            [['auto_id'], 'unique'],
             [['auto_id'], 'exist', 'skipOnError' => true, 'targetClass' => Autok::class, 'targetAttribute' => ['auto_id' => 'auto_id']],
         ];
     }
@@ -46,9 +45,9 @@ class Matricak extends \yii\db\ActiveRecord
     {
         return [
             'matrica_id' => 'Matrica ID',
-            'auto_id' => 'Auto ID',
-            'lejarat_idopont' => 'Lejarat Idopont',
-            'matrica_tipus' => 'Matrica Tipus',
+            'auto_id' => 'Autó',
+            'lejarat_idopont' => 'Lejárati idő',
+            'matrica_tipus' => 'Matrica Tipusa',
         ];
     }
 

@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\query\Matricak $model */
 
-$this->title = 'Create Matricak';
-$this->params['breadcrumbs'][] = ['label' => 'Matricaks', 'url' => ['index']];
+$this->title = 'Matrica Feltöltés';
+$this->params['breadcrumbs'][] = ['label' => 'Matricák', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="matricak-create">

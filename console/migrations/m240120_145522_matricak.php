@@ -16,7 +16,7 @@ class m240120_145522_matricak extends Migration
 
         $this->createTable('{{%matricak}}', [
             'matrica_id' => $this->primaryKey()->unsigned()->unique(),
-            'auto_id' => $this->integer(10)->notNull()->unsigned()->unique(),
+            'auto_id' => $this->integer(10)->notNull()->unsigned(),
             'lejarat_idopont' => $this->timestamp()->notNull(),
             'matrica_tipus' => $this->string(16)->notNull(),
         ], $tableOptions);
